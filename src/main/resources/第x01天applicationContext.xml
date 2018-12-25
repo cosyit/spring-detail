@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="user" class="第x01天.User" init-method="myInit">
+        <property name="age" value="30"></property>
+        <property name="name" value="david"></property>
+        <property name="password" value="31234567890"></property>
+    </bean>
+
+    <bean id="employee" class="第x01天.Employee" init-method="myInit">
+        <property name="name" value="merry"></property>
+        <property name="aga" value="24"></property>
+        <property name="empNo" value="007"></property>
+    </bean>
+
+    <!-- context:component-scan 是component的好搭档。我在此处的意义就是将@Component注解的类 TestBeanPostProcessor 扫描到容器中来。
+    @component 注解相当于报名，那么context:component-scan 就相当于批准报名通过的范围。 -->
+    <context:component-scan base-package="com.cosyit.myspring.第x01天"></context:component-scan>
+</beans>
